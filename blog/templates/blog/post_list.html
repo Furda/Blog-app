@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My BlogPP</title>
-</head>
-<body>
-    <h1><a href="">PP BLOG</a></h1>
+{% extends 'blog/base.html' %}
+
+{% block content %}
 
     {% for post in posts %}
-        <div> 
-            <p>{{ post.published_date }}</p>
+        <div class="post"> 
+            <p class="date">{{ post.published_date }}</p>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
     
-</body>
-</html>
+{% endblock content %}

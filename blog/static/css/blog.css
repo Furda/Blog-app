@@ -1,0 +1,42 @@
+h1, h2, h3, h4 {
+    font-family: 'Tangerin', 'Inconsolata', 'Droid Sans', serif ;
+    font-size: 48px;
+}
+
+.page-header {
+    background-color: #ff9400;
+    padding: 2em;
+    margin-top: 0;
+}
+
+.page-header h1, .page-header h1 a {
+    color: #ffffff;
+    font-size: 36px;
+    text-decoration: none;
+}
+
+.page-header h1 a:hover {
+    color: #117a8b;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+.date {
+    color: #828282;
+}
+
+.post {
+    margin-bottom: 70px;
+    margin-top: 10px;
+}
+
+.post h1 a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.post h1 a:hover {
+    color: #117a8b;
+}
