@@ -40,3 +40,11 @@ h1, h2, h3, h4 {
 .post h1 a:hover {
     color: #117a8b;
 }
+
+.post-form-blog textarea {
+    width: 100%;
+}
+
+.post-form-blog .btn-primary {
+    float: right;
+}
