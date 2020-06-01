@@ -19,13 +19,20 @@
         <h1><a href="{% url 'post_list' %}">PP Blog</a></h1>
 
         {% if user.is_authenticated %}
-            <div>
-                <a href="{% url 'post_new' %}"><i class="fas fa-plus-circle fa-2x top-icon"></i></a>
-                <a href="{% url 'post_draft_list' %}"><i class="fas fa-pencil-ruler fa-2x top-icon"></i></a>
+
+            <div class="top-menu">
+                <a href="{% url 'post_new' %}"><i class="fas fa-plus-circle fa-2x top-menu__icon"></i></a>
+                <a href="{% url 'post_draft_list' %}"><i class="fas fa-pencil-ruler fa-2x top-menu__icon"></i></a>
+
+                <div class="top-menu__user">
+                    <p>Hello, {{ user.username }}<a href="{% url 'logout' %}"></p>
+                        <i class="fas fa-sign-out-alt fa-2x top-menu__user__icon"></i></a>
+                </div>
             </div>
+
         {% else %}
 
-            <a href="{% url 'post_new' %}"><i class="fas fa-user fa-2x top-icon"></i></a>
+            <a href="{% url 'login' %}"><i class="fas fa-sign-in-alt fa-2x top-menu__icon"></i></a>
             
         {% endif %}
     </div>
