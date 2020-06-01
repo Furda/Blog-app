@@ -12,7 +12,7 @@
 
     
     <link href="{% static 'css/blog.css' %}" rel="stylesheet" type="text/css">
-    <title>My BlogPP</title>
+    <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
     <div class="page-header">
@@ -22,7 +22,11 @@
             <div>
                 <a href="{% url 'post_new' %}"><i class="fas fa-plus-circle fa-2x top-icon"></i></a>
                 <a href="{% url 'post_draft_list' %}"><i class="fas fa-pencil-ruler fa-2x top-icon"></i></a>
-            </div>    
+            </div>
+        {% else %}
+
+            <a href="{% url 'post_new' %}"><i class="fas fa-user fa-2x top-icon"></i></a>
+            
         {% endif %}
     </div>
 
