@@ -35,14 +35,25 @@
     <a href="{% url 'add_comment_to_post' pk=post.pk%}" class="btn btn-secondary">Add Comment</a>
     <hr>
     {% for comment in post.comments.all %}
-        <div class="comment">
-            <p class="date">{{ comment.created_date }}</p>
-            <a href="{% url 'comment_remove' pk=comment.post.pk %}"><i class="fas fa-trash-alt fa-1x"></i></a>
-            <p><strong>{{ comment.author }}</strong></p>
-            <p>{{ comment.text }}</p>
-        </div>
+        {% if user.is_authenticated or comment.approved %}
 
+            <div class="comment">
+                <p class="date">{{ comment.created_date }}</p>
+
+                {% if not comment.approved and user.is_superuser %}
+                    <a href="{% url 'comment_approve' pk=comment.pk %}" class="btn btn-success btn-sm"><i class="fas fa-check-circle fa-1x"></i></a>
+                
+                    <a href="{% url 'comment_remove' pk=comment.pk %}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt fa-1x"></i></a>
+                {% endif %}
+
+                <p><strong>{{ comment.author }}</strong></p>
+                <p>{{ comment.text }}</p>
+            </div>
+
+        {% endif %}
     {% empty %}
+
         <p>No comments yet...</p>
+        
     {% endfor %}
 {% endblock %}
