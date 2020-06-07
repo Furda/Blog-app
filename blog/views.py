@@ -98,7 +98,11 @@ def signup(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
-            new_user = User.objects.create_user(form.cleaned_data)
+            new_user = User.objects.create_user(
+                username = form.cleaned_data['username'],
+                email = form.cleaned_data['email'],
+                password = form.cleaned_data['password'],
+            )
             login(request, new_user)
             return redirect('post_list')
     else:
