@@ -19,7 +19,7 @@
 
         {% else %}
 
-            <a href="url 'post_publish' pk=post.pk" class="btn btn-primary">Publish</a>
+            <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
 
         {% endif %}
 
