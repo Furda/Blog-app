@@ -1,11 +1,13 @@
 # Blog web app
 
-* Users can sign up and log in
-* User can create, edit, and delete their own products
-* Users can purchase products and pay using stripe API (just for test)
-* Users can review their orders
+* Users can create and delete blog posts
+* Users can create an account
+* Users must log in to create blog posts, drafts, and comments
+* Superusers can approve and delete comments in blog posts
+* Markdown y syntax highlighting enable
 
 ## Working app
+
  https://blog-dj-app.herokuapp.com/
 
 
