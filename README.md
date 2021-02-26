@@ -1,4 +1,4 @@
-# Blog web app
+# Blog Web App
 
 * Users can create and delete blog posts
 * Users can create an account
@@ -10,6 +10,22 @@
 
  https://blog-dj-app.herokuapp.com/
 
+## Initial Setup Instructions
+
+### Setup Python Virtual Environment
+
+```buildoutcfg
+python3 -m venv venv
+. venv/bin/activate
+pip3 install -r requirements.txt
+```
+## Running Server
+
+```buildoutcfg
+./mange.py migrate
+./mange.py runserver
+```
+### Go and check `http://127.0.0.1:8000/`
 
 ## Built With
 
