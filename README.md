@@ -4,7 +4,7 @@
 * Users can create an account
 * Users must log in to create blog posts, drafts, and comments
 * Superusers can approve and delete comments in blog posts
-* Markdown y syntax highlighting enable
+* Markdown and syntax highlighting enable
 
 ## Working app
 
